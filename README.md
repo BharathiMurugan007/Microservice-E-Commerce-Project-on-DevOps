@@ -1,10 +1,10 @@
 # Microservices E-Commerce Project
 
-This is a scalable and containerized E-commerce application built using Go
+- [This is a scalable and containerized E-commerce application built using Go
 (Golang), designed with microservices architecture and deployed on AWS
-EKS (Elastic Kubernetes Service).
-The project is automated using a CI/CD pipeline with Jenkins and the
-services are containerized using Docker.
+EKS (Elastic Kubernetes Service).]
+- [The project is automated using a CI/CD pipeline with Jenkins and the
+services are containerized using Docker.]
 
 ## Tech Stack:
 
