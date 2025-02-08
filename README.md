@@ -28,7 +28,7 @@ services are containerized using Docker.
 ## Jenkinsfile:
 
     pipeline {
-    agent any
+        agent any
 
     stages {
         stage('Deploy To Kubernetes') {
@@ -48,4 +48,4 @@ services are containerized using Docker.
             }
         }
     }
-    }
+}
