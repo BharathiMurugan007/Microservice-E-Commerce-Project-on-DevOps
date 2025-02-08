@@ -30,22 +30,25 @@ services are containerized using Docker.
     pipeline {
         agent any
 
-    stages {
-        stage('Deploy To Kubernetes') {
-            steps {
-                withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'EKS-1', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', serverUrl: 'https://448E3ECD3E72A5A3D9556991B3D587A0.gr7.us-east-1.eks.amazonaws.com']]) {
-                    sh "kubectl apply -f deployment-service.yml"
+        stages {
+            stage('Deploy To Kubernetes') {
+                steps {
+                    withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'EKS-1', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', serverUrl: 'https://448E3ECD3E72A5A3D9556991B3D587A0.gr7.us-east-1.eks.amazonaws.com']]) {
+                        sh "kubectl apply -f deployment-service.yml"
                     
-                }
-            }
-        }
+                     }
+              }
+         }
         
-        stage('verify Deployment') {
-            steps {
-                withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'EKS-1', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', serverUrl: 'https://448E3ECD3E72A5A3D9556991B3D587A0.gr7.us-east-1.eks.amazonaws.com']]) {
-                    sh "kubectl get svc -n webapps"
-                }
-            }
-        }
-    }
-}
+         stage('verify Deployment') {
+             steps {
+                 withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'EKS-1', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', serverUrl: 'https://448E3ECD3E72A5A3D9556991B3D587A0.gr7.us-east-1.eks.amazonaws.com']]) {
+                     sh "kubectl get svc -n webapps"
+                 }
+             }
+         }
+     } }
+
+## conclusion:
+
+This project demonstrates a scalable, resilient, and automated approach to microservices-based E-commerce using Jenkins for CI/CD, Docker for containerization, and AWS EKS for deployment.
