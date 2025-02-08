@@ -27,7 +27,7 @@ services are containerized using Docker.
 
 ## Jenkinsfile:
 
-pipeline {
+    pipeline {
     agent any
 
     stages {
@@ -48,4 +48,4 @@ pipeline {
             }
         }
     }
-}
+    }
